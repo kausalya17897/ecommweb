@@ -1,0 +1,70 @@
+<Image src="https://cdn.shopify.com/s/files/1/1003/9198/products/BeccaCannesFront_1200x.jpg?v=1571611661"/>
+ const [cart, setCart] = useState(0);
+ const Search = styled('div')(({ theme }) => ({
+   position: 'relative',
+   borderRadius: theme.shape.borderRadius,
+   backgroundColor: alpha(theme.palette.common.white, 0.15),
+   '&:hover': {
+     backgroundColor: alpha(theme.palette.common.white, 0.25),
+   },
+   marginLeft: 0,
+   width: '100%',
+   [theme.breakpoints.up('sm')]: {
+     marginLeft: theme.spacing(1),
+     width: 'auto',
+   },
+ }));
+ 
+ const SearchIconWrapper = styled('div')(({ theme }) => ({
+   padding: theme.spacing(0, 2),
+   height: '100%',
+   position: 'absolute',
+   pointerEvents: 'none',
+   display: 'flex',
+   alignItems: 'center',
+   justifyContent: 'center',
+ }));
+ 
+ const StyledInputBase = styled(InputBase)(({ theme }) => ({
+   color: 'inherit',
+   '& .MuiInputBase-input': {
+     padding: theme.spacing(1, 1, 1, 0),
+     // vertical padding + font size from searchIcon
+     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+     transition: theme.transitions.create('width'),
+     width: '100%',
+     [theme.breakpoints.up('sm')]: {
+       width: '12ch',
+       '&:focus': {
+         width: '20ch',
+       },
+     },
+   },
+ }));
+ <div className='dflex'>
+        <div className='webtitle'>A-Z shopping</div> 
+      <nav>
+        <ul className='dflex'>
+          <li><Link to="/">Home</Link></li>
+      <li><Link to="/Products">Products</Link></li>
+      <li><Link to="Contact us">Review</Link></li>
+      </ul>
+      </nav>
+       <Search className='Search'>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase 
+            className="searchinput"
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </Search>
+          <li> <Link to="Signin"className='signin' > <Avatar src="/broken-image.jpg"className='signin' /></Link></li>
+     <div className='cartbox'>
+      <button className="cart">🛒Cart <span className="addcart"> { cart } </span></button>
+      </div>
+      </div>
+
+
+      <div></div>
