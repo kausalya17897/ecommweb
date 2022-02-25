@@ -3,8 +3,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import styled from 'styled-components';
 import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 const Container=styled.div`
 height:60px;
 `
@@ -73,11 +73,16 @@ export default function Navbar() {
                  <MenuItem>REGISTER</MenuItem>
                  <MenuItem>LOGIN</MenuItem>
                  <MenuItem>
+                 <IconButton>
+       <FavoriteBorderOutlinedIcon/>
+       
+    </IconButton>
              <IconButton aria-label="cart">
              <Badge badgeContent={4} color="success">
-        <ShoppingCartOutlinedIcon />
+        <ShoppingBagOutlinedIcon style={{fontSize:"25px"}} />
       </Badge>
     </IconButton>
+    
     </MenuItem>
              </Right>
           </Wrapper>  

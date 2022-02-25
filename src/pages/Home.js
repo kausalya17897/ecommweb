@@ -2,7 +2,10 @@ import React from 'react'
 import './Home.css'
 import Navbar from '../components/Navbar';
 import Slider from '../components/Slider';
-import Image from '../components/Image';
+import Categories from '../components/Categories';
+import Products from '../components/Products';
+import Updatemsg from '../components/Updatemsg';
+import Footer from '../components/Footer';
 export default function Home() {
   
   return (
@@ -12,7 +15,10 @@ export default function Home() {
       </div>
      <Navbar/>
      <Slider/>
-     <Image/>
+     <Categories/>
+     <Products/>
+     <Updatemsg/>
+     <Footer/>
       </div>
     
   )
