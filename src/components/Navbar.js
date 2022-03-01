@@ -7,6 +7,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { Button } from '@mui/material';
 import { useHistory } from 'react-router-dom';
+import { useCart } from 'react-use-cart';
 
 
 const Container=styled.div`
@@ -58,8 +59,10 @@ const MenuItem=styled.div`
 font-size:14px;
 cursor:pointer;
 margin:25px;`
-export default function Navbar({cart,setCart}) {
-   console.log("cartvalue",cart,setCart)
+export default function Navbar() {
+   
+   const {totalItems}=useCart();
+   console.log(totalItems);
 const history=useHistory();
   return (
     
@@ -83,7 +86,7 @@ const history=useHistory();
        
     </IconButton>
              <IconButton aria-label="cart" onClick={()=>history.push("/cart")}>
-             <Badge badgeContent={cart} color="success">
+             <Badge badgeContent={totalItems} color="success">
         <ShoppingBagOutlinedIcon style={{fontSize:"25px"}} />
       </Badge>
     </IconButton>
