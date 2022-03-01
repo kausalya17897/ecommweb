@@ -11,12 +11,21 @@ justify-content:space-between;
 `
 export default function Products() {
   console.log("pro",productsitem)
+  console.warn(productsitem)
   return (
     <Container>
         
-      {productsitem.map(a=>(
-        <Product a={a} key={a.id}/>
-      ))}
+      {productsitem.map((items,index)=>{
+        return(
+        
+        <Product items={items}
+         key={items.id}
+          img={items.img} 
+          price={items.price} 
+          off={items.off} 
+          quanity={items.quanity}/>
+        )
+        })}
     </Container>
   )
 }

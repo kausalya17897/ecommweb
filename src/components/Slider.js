@@ -71,6 +71,7 @@ font-size:20px;
 background-color:transparent;
 cursor:pointer`
 export default function Slider(){
+    
     const handleClick=(direction)=>{
         if(direction==="left"){
             setSlideshow(slideshow>0?slideshow-1:2)

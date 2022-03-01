@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
-
+import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 const Container=styled.div`
 flex:1;
@@ -37,14 +37,16 @@ color:gray;
 cursor:pointer;
 `
 
+
 export default function Categoryitem({a}) {
   console.log("cat",a);
+  const history=useHistory();
   return (
     <Container>
       <Image src={a.img}/>
       <Info>
           <Title>{a.title}</Title>
-          <Button>SHOP NOW</Button>
+          <Button onClick={()=>history.push("/shirts")}>SHOP NOW</Button>
       </Info>
     </Container>
   )

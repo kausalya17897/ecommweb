@@ -6,10 +6,12 @@ import Categories from '../components/Categories';
 import Products from '../components/Products';
 import Updatemsg from '../components/Updatemsg';
 import Footer from '../components/Footer';
+
 export default function Home() {
   
   return (
     <div>
+  
       <div className='deal'>
         !Deal of the day free shipping on orders over Rs 500
       </div>
@@ -19,6 +21,7 @@ export default function Home() {
      <Products/>
      <Updatemsg/>
      <Footer/>
+    
       </div>
     
   )

@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-
-
+import {IconButton } from '@mui/material';
+import Button from '@mui/material/Button';
+import {useCart} from 'react-use-cart';
 
 
 const Info = styled.div`
@@ -29,6 +30,7 @@ const Container = styled.div`
   min-width: 280px;
   height: 350px;
   display: flex;
+  flex-direction:column;
   align-items: center;
   justify-content: center;
   background-color: #f5fbfd;
@@ -65,15 +67,23 @@ const Icon = styled.div`
     background-color: #e9f5f5;
     transform: scale(1.1);
   }`
-export default function Product({a}) {
-    console.log(a);
+
+  const Price=styled.p`
+height:20px;`
+export default function Product(props) {
+    console.log("props",props);
+  
+  const {addItem}=useCart();
+  console.log("addItem",props)
   return (
     <Container>
       <Circle />
-      <Image src={a.img}/>
+      <Image src={props.img} alt="xdsg"/>
       <Info>
         <Icon>
+          <IconButton onClick={()=>addItem(props.items)}>
           <ShoppingCartOutlinedIcon/>
+          </IconButton>
         </Icon>
         <Icon>
           <SearchOutlinedIcon/>
@@ -82,6 +92,9 @@ export default function Product({a}) {
           <FavoriteBorderOutlinedIcon/>
         </Icon>
       </Info>
+      
+      <Price>Rs:{props.price}</Price>
+      <Button onClick={()=>addItem(props.items)}>Add to cart</Button>
     </Container>
     
   )

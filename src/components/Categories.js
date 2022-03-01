@@ -9,6 +9,7 @@ padding:20px;
 justify-content:space-between;
 `
 export default function Categories() {
+  
   return (
     <Container>
        {categories.map(a=>(

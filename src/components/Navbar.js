@@ -5,6 +5,10 @@ import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import { Button } from '@mui/material';
+import { useHistory } from 'react-router-dom';
+
+
 const Container=styled.div`
 height:60px;
 `
@@ -54,8 +58,9 @@ const MenuItem=styled.div`
 font-size:14px;
 cursor:pointer;
 margin:25px;`
-export default function Navbar() {
-   
+export default function Navbar({cart,setCart}) {
+   console.log("cartvalue",cart,setCart)
+const history=useHistory();
   return (
     
         <Container>
@@ -70,15 +75,15 @@ export default function Navbar() {
              </Left>
              <Center><Logo>Shoppify.</Logo></Center>
              <Right>
-                 <MenuItem>REGISTER</MenuItem>
-                 <MenuItem>LOGIN</MenuItem>
+                <Button style={{color:"black"}} className="MenuItem" onClick={()=>history.push("/login")}>REGISTER</Button>
+                 <Button className="MenuItem" onClick={()=>history.push("/login")}>LOGIN</Button>
                  <MenuItem>
                  <IconButton>
        <FavoriteBorderOutlinedIcon/>
        
     </IconButton>
-             <IconButton aria-label="cart">
-             <Badge badgeContent={4} color="success">
+             <IconButton aria-label="cart" onClick={()=>history.push("/cart")}>
+             <Badge badgeContent={cart} color="success">
         <ShoppingBagOutlinedIcon style={{fontSize:"25px"}} />
       </Badge>
     </IconButton>
