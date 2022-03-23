@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-
+import { mobile } from "../responsive";
 const Container=styled.div`
 flex:1;
 margin:3px;
 height:70vh;
 position:relative;
+${mobile({ height: "20vh" })}
 `
 const Image=styled.img`
 width:100%;
@@ -35,6 +36,7 @@ padding:10px;
 background-color:white;
 color:gray;
 cursor:pointer;
+${mobile({ height: "20vh" })}
 `
 
 

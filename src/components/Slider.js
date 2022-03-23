@@ -2,7 +2,9 @@ import { ArrowLeftOutlined, ArrowRightRounded } from "@mui/icons-material"
 import { Slideritem } from "../pages/Slideritem"
 import styled from "styled-components"
 import { useState } from "react"
+import {mobile} from "../responsive";
 
+  
 const Container=styled.div`
 width:100%;
 height:100vh;
@@ -38,10 +40,13 @@ height:100vh;
 display:flex;
 
 background-color:${(props)=>props.bg};
-align-items:center;`
+align-items:center;
+`
 const ImageContainer=styled.div`
 height:100%;
-width:60%;`
+width:60%;
+${mobile({ width: "100%"})}
+`
 const Info=styled.div`
 display:flex;
 flex-direction:column;
@@ -51,6 +56,7 @@ padding:10px;
 margin-top:100px`
 const Image=styled.img`
 height:80%;
+
 `;
 const Title=styled.h1`
 font-size:70px;

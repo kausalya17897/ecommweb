@@ -8,15 +8,17 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { Button } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
-
+import { mobile } from "../responsive";
 
 const Container=styled.div`
 height:60px;
+${mobile({ height: "50px" })}
 `
 const Wrapper=styled.div`
 padding:10px 20px;
 display:flex;
 justify-content:space-between;
+${mobile({ padding: "10px 0px" })}
 `
 const Left=styled.div`
 flex:1;
@@ -28,6 +30,7 @@ const Language=styled.span`
 font-size:14px;
 cursor:pointer;
 padding-top:5px;
+${mobile({ display: "none" })}
 `
 const SearchContainer=styled.div`
 border:0.5px solid lightgray;
@@ -40,9 +43,11 @@ padding:5px;
 const Logo=styled.h1`
 margin-top:0px;
 margin-bottom:0px;
-font-weight:bold;`
+font-weight:bold;
+${mobile({ fontSize: "24px" })}`
 const Input=styled.input`
 border:none;
+${mobile({ width: "50px" })}
 `
 const Center=styled.div`
 text-align:center;
@@ -78,7 +83,7 @@ const history=useHistory();
              </Left>
              <Center><Logo>Shoppify.</Logo></Center>
              <Right>
-                <Button style={{color:"black"}} className="MenuItem" onClick={()=>history.push("/login")}>REGISTER</Button>
+                <Button style={{color:"black"}} className="MenuItem" onClick={()=>history.push("/register")}>REGISTER</Button>
                  <Button className="MenuItem" onClick={()=>history.push("/login")}>LOGIN</Button>
                  <MenuItem>
                  <IconButton>

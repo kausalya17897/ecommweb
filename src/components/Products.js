@@ -1,7 +1,9 @@
 import React from 'react'
-import {productsitem}  from '../pages/Slideritem';
+
 import styled from 'styled-components';
 import Product from './Product';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Container=styled.div`
 display:flex;
@@ -10,8 +12,17 @@ padding:20px;
 justify-content:space-between;
 `
 export default function Products() {
-  console.log("pro",productsitem)
-  console.warn(productsitem)
+  
+  const[productsitem,setProductsitem]=useState([]);
+
+  const getShirts=()=>{
+    fetch("https://girlszonewebsite.herokuapp.com/shirts")
+    .then((data)=>data.json())
+    .then((mvs)=>setProductsitem(mvs))
+
+  };
+ console.log("pro",productsitem)
+useEffect(getShirts,[]);
   return (
     <Container>
         

@@ -70,18 +70,18 @@ const Icon = styled.div`
 
   const Price=styled.p`
 height:20px;`
-export default function Product(props) {
-    console.log("props",props);
+export default function Product({img,price,quanity,items}) {
+    console.log("props",img,price,quanity);
   
   const {addItem}=useCart();
-  console.log("addItem",props)
+  console.log("addItem")
   return (
     <Container>
       <Circle />
-      <Image src={props.img} alt="xdsg"/>
+      <Image src={img} alt="xdsg"/>
       <Info>
         <Icon>
-          <IconButton onClick={()=>addItem(props.items)}>
+          <IconButton onClick={()=>addItem(items)}>
           <ShoppingCartOutlinedIcon/>
           </IconButton>
         </Icon>
@@ -93,8 +93,8 @@ export default function Product(props) {
         </Icon>
       </Info>
       
-      <Price>Rs:{props.price}</Price>
-      <Button onClick={()=>addItem(props.items)}>Add to cart</Button>
+      <Price>Rs:{price}</Price>
+      
     </Container>
     
   )

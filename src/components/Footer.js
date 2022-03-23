@@ -8,9 +8,11 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import RoomIcon from '@mui/icons-material/Room';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import {mobile} from '../responsive'
 const Container=styled.div`
 height:auto;
 display:flex;
+${mobile({ flexDirection: "column" })}
 `
 const Left=styled.div`
 flex:1;
